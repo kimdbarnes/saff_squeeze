@@ -38,4 +38,24 @@ describe SaffSqueeze do
       expect(results).to eq expected_results
     end
   end
+
+  context 'debugging' do
+    it 'should not have a bug' do
+      input = [
+          [0, 1, 0],
+          [1, 1, 1],
+          [1, 1, 1],
+      ]
+
+      expected_results = [
+          [1, 1, 1],
+          [0, 0, 0],
+          [1, 0, 1],
+      ]
+
+      results = SaffSqueeze.new.doit(input)
+
+      expect(results).to eq expected_results
+    end
+  end
 end
